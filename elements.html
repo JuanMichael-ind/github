@@ -1,0 +1,444 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Experience & Skills – Juan Michael Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+
+			/* ── Section divider ── */
+			.page-section {
+				padding: 3em 0;
+				border-bottom: solid 1px rgba(255,255,255,0.125);
+			}
+			.page-section:last-of-type { border-bottom: none; }
+			.page-section h2 {
+				font-size: 1.6em;
+				margin-bottom: 1.5em;
+				padding-bottom: 0.5em;
+				border-bottom: solid 2px rgba(255,255,255,0.1);
+			}
+
+			/* ── Experience timeline ── */
+			.exp-item {
+				display: flex;
+				gap: 2em;
+				align-items: flex-start;
+				margin-bottom: 2em;
+			}
+			.exp-item:last-of-type { margin-bottom: 0; }
+
+			/* IMAGE SLOT for company logo
+			   ──────────────────────────────
+			   To add your BMKG logo in VS Code:
+			   1. Copy image into  images/  folder
+			      e.g. images/bmkg-logo.png
+			   2. Delete the placeholder text inside .exp-logo
+			   3. Replace with:
+			      <img src="images/bmkg-logo.png" alt="BMKG" />
+			   ────────────────────────────── */
+			.exp-logo {
+				flex-shrink: 0;
+				width: 80px;
+				height: 80px;
+				border-radius: 6px;
+				border: 2px dashed rgba(255,255,255,0.2);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				font-size: 0.55em;
+				color: rgba(255,255,255,0.25);
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				line-height: 1.6;
+				overflow: hidden;
+			}
+			.exp-logo img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				display: block;
+			}
+			.exp-body { flex: 1; }
+			.exp-body h3 { font-size: 1.2em; margin: 0 0 0.15em 0; }
+			.exp-company {
+				display: block;
+				font-size: 0.85em;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				color: #f0a500;
+				margin-bottom: 0.2em;
+			}
+			.exp-period {
+				display: block;
+				font-size: 0.72em;
+				color: rgba(255,255,255,0.3);
+				font-style: italic;
+				margin-bottom: 0.9em;
+			}
+			.exp-body ul {
+				padding-left: 1.2em;
+				margin: 0;
+			}
+			.exp-body ul li {
+				font-size: 0.88em;
+				line-height: 1.75;
+				color: rgba(255,255,255,0.7);
+				margin-bottom: 0.4em;
+			}
+
+			/* ── Skills grid ── */
+			.skills-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+				gap: 1.5em;
+			}
+			.skill-group h4 {
+				font-size: 0.8em;
+				text-transform: uppercase;
+				letter-spacing: 0.12em;
+				color: rgba(255,255,255,0.35);
+				margin-bottom: 0.8em;
+				border-bottom: 1px solid rgba(255,255,255,0.08);
+				padding-bottom: 0.4em;
+			}
+			.skill-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5em;
+			}
+			.skill-tag {
+				display: inline-block;
+				border: solid 1px rgba(255,255,255,0.15);
+				border-radius: 4px;
+				padding: 0.3em 0.8em;
+				font-size: 0.78em;
+				color: rgba(255,255,255,0.65);
+				transition: border-color 0.2s, color 0.2s;
+			}
+			.skill-tag:hover {
+				border-color: #f0a500;
+				color: #f0a500;
+			}
+
+			/* ── Certificate card ── */
+			.cert-card {
+				display: flex;
+				gap: 2em;
+				align-items: flex-start;
+				padding: 2em;
+				border: solid 1px rgba(255,255,255,0.1);
+				border-radius: 6px;
+				margin-bottom: 1.5em;
+			}
+			.cert-card:last-of-type { margin-bottom: 0; }
+
+			/* IMAGE SLOT for certificate image
+			   ──────────────────────────────────
+			   To add your certificate image in VS Code:
+			   1. Copy image into  images/  folder
+			      e.g. images/revou-cert.jpg
+			   2. Delete the placeholder text inside .cert-thumb
+			   3. Replace with:
+			      <img src="images/revou-cert.jpg" alt="RevoU Certificate" />
+			   ────────────────────────────────── */
+			.cert-thumb {
+				flex-shrink: 0;
+				width: 160px;
+				height: 110px;
+				border-radius: 5px;
+				border: 2px dashed rgba(255,255,255,0.2);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+				font-size: 0.6em;
+				color: rgba(255,255,255,0.25);
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				line-height: 1.6;
+				overflow: hidden;
+			}
+			.cert-thumb img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				display: block;
+			}
+			.cert-info { flex: 1; }
+			.cert-info h3 { font-size: 1.1em; margin: 0 0 0.2em 0; }
+			.cert-issuer {
+				display: block;
+				font-size: 0.82em;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				color: #f0a500;
+				margin-bottom: 0.2em;
+			}
+			.cert-date {
+				display: block;
+				font-size: 0.72em;
+				color: rgba(255,255,255,0.3);
+				font-style: italic;
+				margin-bottom: 0.8em;
+			}
+			.cert-id {
+				font-size: 0.72em;
+				color: rgba(255,255,255,0.25);
+				margin-bottom: 1em;
+				display: block;
+			}
+
+			@media screen and (max-width: 600px) {
+				.exp-item { flex-direction: column; }
+				.exp-logo { width: 60px; height: 60px; }
+				.cert-card { flex-direction: column; }
+				.cert-thumb { width: 100%; height: 160px; }
+			}
+
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="logo">Data Analyst</a>
+			</header>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">Project Experience</a></li>
+					<li><a href="generic.html">Education</a></li>
+					<li class="active"><a href="elements.html">Working Experience</a></li>
+					<li><a href="elements.html">Skills</a></li>
+					<li><a href="elements.html">Certificate</a></li>
+				</ul>
+				<ul class="icons">
+					<li><a href="http://www.linkedin.com/in/juan-michael-376244231" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+					<li><a href="https://github.com/JuanMichael-ind" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="https://wa.me/628124747024" class="icon brands alt fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+					<li><a href="mailto:juanmichaelp21@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+				<article class="post">
+
+					<header class="major">
+						<h1>Experience, Skills<br />&amp; Certifications</h1>
+						<p>My professional experience, technical toolkit, and credentials.</p>
+					</header>
+
+					<!-- ═══════════════════════════════════
+					     WORKING EXPERIENCE
+					═══════════════════════════════════ -->
+					<div class="page-section">
+						<h2>Working Experience</h2>
+
+						<div class="exp-item">
+
+							<div class="exp-logo">
+								<!-- IMAGE SLOT: BMKG Logo
+								     Delete this text and paste:
+								     <img src="images/bmkg-logo.png" alt="BMKG" /> -->
+								BMKG<br/>Logo<br/>Here
+							</div>
+
+							<div class="exp-body">
+								<h3>Seismic Data Analyst Intern</h3>
+								<span class="exp-company">BMKG – Meteorology, Climatology &amp; Geophysical Agency</span>
+								<span class="exp-period">Jul 2022 – Aug 2022</span>
+								<ul>
+									<li>Monitored real-time seismic data through the InaTEWS network, assisting in the detection of more than 5 seismic events.</li>
+									<li>Processed raw seismic waveforms using SeisComP3 to determine earthquake magnitude and epicenter locations, ensuring data accuracy exceeding 95%.</li>
+									<li>Analyzed 45 days of climate and seismic datasets to identify patterns in local seismicity and rainfall intensity.</li>
+									<li>Collaborated with senior geophysicists to maintain and calibrate broadband seismometers, sustaining 95% data accuracy.</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- ═══════════════════════════════════
+					     SKILLS
+					═══════════════════════════════════ -->
+					<div class="page-section">
+						<h2>Skills</h2>
+						<div class="skills-grid">
+
+							<div class="skill-group">
+								<h4>Languages &amp; Querying</h4>
+								<div class="skill-tags">
+									<span class="skill-tag">Python</span>
+									<span class="skill-tag">SQL</span>
+									<span class="skill-tag">Pandas</span>
+									<span class="skill-tag">NumPy</span>
+								</div>
+							</div>
+
+							<div class="skill-group">
+								<h4>Visualization &amp; BI</h4>
+								<div class="skill-tags">
+									<span class="skill-tag">Power BI</span>
+									<span class="skill-tag">Tableau</span>
+									<span class="skill-tag">Matplotlib</span>
+									<span class="skill-tag">Seaborn</span>
+								</div>
+							</div>
+
+							<div class="skill-group">
+								<h4>Analytics &amp; Modeling</h4>
+								<div class="skill-tags">
+									<span class="skill-tag">K-Means Clustering</span>
+									<span class="skill-tag">Statistical Modeling</span>
+									<span class="skill-tag">EDA</span>
+									<span class="skill-tag">A/B Testing</span>
+									<span class="skill-tag">Hypothesis Testing</span>
+								</div>
+							</div>
+
+							<div class="skill-group">
+								<h4>Tools</h4>
+								<div class="skill-tags">
+									<span class="skill-tag">Excel</span>
+									<span class="skill-tag">Google Sheets</span>
+									<span class="skill-tag">SeisComP3</span>
+								</div>
+							</div>
+
+							<div class="skill-group">
+								<h4>Soft Skills</h4>
+								<div class="skill-tags">
+									<span class="skill-tag">Critical Thinking</span>
+									<span class="skill-tag">Communication</span>
+									<span class="skill-tag">Problem Solving</span>
+									<span class="skill-tag">Teamwork</span>
+									<span class="skill-tag">Adaptability</span>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- ═══════════════════════════════════
+					     CERTIFICATES
+					═══════════════════════════════════ -->
+					<div class="page-section">
+						<h2>Certifications</h2>
+
+						<div class="cert-card">
+
+							<div class="cert-thumb">
+								<!-- IMAGE SLOT: Certificate Image
+								     Delete this text and paste:
+								     <img src="images/revou-cert.jpg" alt="RevoU Certificate" /> -->
+								Certificate<br/>Image<br/>Here
+							</div>
+
+							<div class="cert-info">
+								<h3>Full Stack Data Analytics</h3>
+								<span class="cert-issuer">RevoU</span>
+								<span class="cert-date">Issued: March 6, 2026</span>
+								<span class="cert-id">No: FSDA-2026-03-40828339809 &nbsp;·&nbsp; Batch 13</span>
+								<p style="font-size:0.85em; color:rgba(255,255,255,0.6); margin-bottom:1em;">
+									Awarded upon successful completion of a 14-week full-stack data analytics
+									program — all 5 modules passed: Business Problems, Statistics, SQL,
+									Python, and Data Visualization.
+								</p>
+								<ul class="actions">
+									<li>
+										<a href="https://certificates.revou.tech/?id=FSDA-2026-03-40828339809&name=Juan%20Michael"
+										   target="_blank" class="button small">
+											Verify Certificate
+										</a>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+
+				</article>
+			</div>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<section>
+					<form method="post" action="#">
+						<div class="fields">
+							<div class="field">
+								<label for="name">Name</label>
+								<input type="text" name="name" id="name" />
+							</div>
+							<div class="field">
+								<label for="email">Email</label>
+								<input type="text" name="email" id="email" />
+							</div>
+							<div class="field">
+								<label for="message">Message</label>
+								<textarea name="message" id="message" rows="3"></textarea>
+							</div>
+						</div>
+						<ul class="actions">
+							<li><input type="submit" value="Send Message" /></li>
+						</ul>
+					</form>
+				</section>
+				<section class="split contact">
+					<section class="alt">
+						<h3>Address</h3>
+						<p>Ambon, Maluku</p>
+					</section>
+					<section>
+						<h3>Phone</h3>
+						<p><a href="https://wa.me/628124747024">0812 4747 024</a></p>
+					</section>
+					<section>
+						<h3>Email</h3>
+						<p><a href="mailto:juanmichaelp21@gmail.com">juanmichaelp21@gmail.com</a></p>
+					</section>
+					<section>
+						<h3>Social</h3>
+						<ul class="icons alt">
+							<li><a href="http://www.linkedin.com/in/juan-michael-376244231" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
+							<li><a href="https://github.com/JuanMichael-ind" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://wa.me/628124747024" class="icon brands alt fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+							<li><a href="mailto:juanmichaelp21@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</section>
+				</section>
+			</footer>
+
+			<!-- Copyright -->
+			<div id="copyright">
+				<ul><li>&copy; Juan Michael Paais</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+			</div>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
