@@ -1,0 +1,391 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>About – Juan Michael Paais</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    <style>
+
+        /* ── About Hero ── */
+        .about-hero {
+            display: flex;
+            gap: 3em;
+            align-items: flex-start;
+            padding: 0 0 3em 0;
+            border-bottom: solid 1px rgba(0,0,0,0.12);
+            margin-bottom: 3em;
+        }
+
+        /* PHOTO SLOT
+           ──────────────────────────────────────────────
+           To add your photo:
+           1. Copy your photo into the  images/  folder
+              e.g. images/juan-photo.jpg
+           2. Delete the placeholder content inside .about-photo
+           3. Replace with:
+              <img src="images/juan-photo.jpg" alt="Juan Michael Paais" />
+           ────────────────────────────────────────────── */
+        .about-photo {
+            flex-shrink: 0;
+            width: 220px;
+            height: 260px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 3px solid rgba(240,165,0,0.35);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+            background: rgba(0,0,0,0.04);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.7em;
+            color: rgba(0,0,0,0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            line-height: 2;
+        }
+        .about-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .about-text { flex: 1; }
+        .about-text h2 {
+            font-size: 1.6em;
+            margin: 0 0 0.15em 0;
+            color: #000000;
+        }
+        .about-tagline {
+            display: block;
+            font-size: 0.85em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #f0a500;
+            margin-bottom: 1.2em;
+        }
+        .about-text p {
+            font-size: 0.95em;
+            line-height: 1.85;
+            color: #333333;
+            margin-bottom: 1em;
+        }
+
+        /* ── Quick-facts strip ── */
+        .about-facts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6em;
+            margin: 1.5em 0 1.8em;
+        }
+        .fact-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45em;
+            border: solid 1px rgba(0,0,0,0.18);
+            border-radius: 4px;
+            padding: 0.3em 0.9em;
+            font-size: 0.78em;
+            color: #333333;
+            background: rgba(0,0,0,0.025);
+        }
+        .fact-chip .icon-dot {
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: #f0a500;
+            flex-shrink: 0;
+        }
+
+        /* ── Divider sections ── */
+        .about-section {
+            padding: 2.5em 0;
+            border-bottom: solid 1px rgba(0,0,0,0.1);
+        }
+        .about-section:last-of-type { border-bottom: none; }
+        .about-section h3 {
+            font-size: 0.78em;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #555555;
+            margin-bottom: 1.2em;
+            padding-bottom: 0.5em;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* ── Highlight cards ── */
+        .highlight-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.2em;
+        }
+        .highlight-card {
+            border: solid 1px rgba(0,0,0,0.12);
+            border-radius: 8px;
+            padding: 1.4em 1.5em;
+            background: rgba(0,0,0,0.02);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .highlight-card:hover {
+            border-color: #f0a500;
+            box-shadow: 0 4px 14px rgba(240,165,0,0.08);
+        }
+        .highlight-card .hc-label {
+            display: block;
+            font-size: 0.72em;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: #f0a500;
+            margin-bottom: 0.4em;
+            font-weight: 700;
+        }
+        .highlight-card .hc-value {
+            font-size: 1.05em;
+            font-weight: 700;
+            color: #000000;
+            display: block;
+            margin-bottom: 0.3em;
+        }
+        .highlight-card .hc-sub {
+            font-size: 0.78em;
+            color: #555555;
+            line-height: 1.5;
+        }
+
+        /* ── Interests list ── */
+        .interests-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7em;
+            padding: 0;
+            list-style: none;
+            margin: 0;
+        }
+        .interests-list li {
+            border: solid 1px rgba(0,0,0,0.15);
+            border-radius: 4px;
+            padding: 0.35em 1em;
+            font-size: 0.82em;
+            color: #333333;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .interests-list li:hover {
+            border-color: #f0a500;
+            color: #f0a500;
+        }
+
+        /* ── CTA buttons ── */
+        .about-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8em;
+            margin-top: 0.5em;
+        }
+
+        @media screen and (max-width: 700px) {
+            .about-hero { flex-direction: column; align-items: center; }
+            .about-photo { width: 160px; height: 190px; }
+            .about-text { text-align: center; }
+            .about-facts { justify-content: center; }
+            .about-cta { justify-content: center; }
+        }
+    </style>
+</head>
+<body class="is-preload">
+<div id="wrapper">
+
+    <header id="header">
+        <a href="index.html" class="logo">Juan Michael Paais</a>
+    </header>
+
+    <nav id="nav">
+        <ul class="links">
+            <li class="active"><a href="about.html">About</a></li>
+            <li><a href="index.html">Projects</a></li>
+            <li><a href="education.html">Education</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="certificate.html">Certificate</a></li>
+        </ul>
+        <ul class="icons">
+            <li><a href="http://www.linkedin.com/in/juan-michael-376244231" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+            <li><a href="https://github.com/JuanMichael-ind" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+            <li><a href="https://wa.me/628124747024" class="icon brands alt fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+            <li><a href="mailto:juanmichaelp21@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+        </ul>
+    </nav>
+
+    <div id="main">
+        <section class="post">
+
+            <header class="major">
+                <h1>About Me</h1>
+                <p>Get to know the person behind the data.</p>
+            </header>
+
+            <!-- ── HERO: PHOTO + BIO ── -->
+            <div class="about-hero">
+
+                <div class="about-photo">
+                    <img src="images/JuanPhotos.png" alt="Juan Michael Paais" />
+                </div>
+
+                <div class="about-text">
+                    <h2>Juan Michael Paais</h2>
+                    <span class="about-tagline">Data Analyst &nbsp;·&nbsp; Geophysical Engineer</span>
+
+                    <p>
+                        Throughout my engineering studies, I was constantly pushed to adapt to complex
+                        problem-solving, collaborate across disciplines, and keep learning beyond the
+                        classroom. These experiences naturally carried into my recent Data Analytics
+                        bootcamp at RevoU, where I built hands-on proficiency in Python, SQL,
+                        statistical modeling, and data visualization using Power BI and Tableau.
+                    </p>
+                    <p>
+                        During this time, I applied these skills in real projects — from segmenting
+                        5,500 customer records using K-Means Clustering to developing a portfolio
+                        optimization framework that delivered 10% alpha over a sector benchmark. Prior
+                        to this, my internship at BMKG allowed me to process seismic datasets with
+                        over 95% accuracy and monitor real-time data across more than 5 seismic events.
+                    </p>
+                    <p>
+                        With this combination of an engineering foundation, structured analytics
+                        training, and applied project experience, I am driven to deliver meaningful,
+                        data-driven insights that support organizational objectives and create lasting
+                        impact.
+                    </p>
+
+                    <!-- Quick-fact chips -->
+                    <div class="about-facts">
+                        <span class="fact-chip"><span class="icon-dot"></span> Ambon, Maluku, Indonesia</span>
+                        <span class="fact-chip"><span class="icon-dot"></span> Open to work</span>
+                        <span class="fact-chip"><span class="icon-dot"></span> B.Eng. Geophysical Engineering</span>
+                        <span class="fact-chip"><span class="icon-dot"></span> RevoU FSDA Certified</span>
+                    </div>
+
+                    <div class="about-cta">
+                        <a href="index.html" class="button">View Projects</a>
+                        <a href="https://www.linkedin.com/in/juan-michael-376244231" target="_blank" class="button alt">LinkedIn</a>
+                        <a href="https://wa.me/628124747024" target="_blank" class="button alt">WhatsApp</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- ── HIGHLIGHTS ── -->
+            <div class="about-section">
+                <h3>Highlights</h3>
+                <div class="highlight-cards">
+
+                    <div class="highlight-card">
+                        <span class="hc-label">Education</span>
+                        <span class="hc-value">B.Eng. Geophysical Engineering</span>
+                        <span class="hc-sub">Universitas Pattimura &nbsp;·&nbsp; GPA 3.24 / 4.00</span>
+                    </div>
+
+                    <div class="highlight-card">
+                        <span class="hc-label">Certification</span>
+                        <span class="hc-value">Full-Stack Data Analytics</span>
+                        <span class="hc-sub">RevoU &nbsp;·&nbsp; Issued March 2026 &nbsp;·&nbsp; All 5 modules passed</span>
+                    </div>
+
+                    <div class="highlight-card">
+                        <span class="hc-label">Experience</span>
+                        <span class="hc-value">Seismic Data Analyst Intern</span>
+                        <span class="hc-sub">BMKG &nbsp;·&nbsp; Jul – Aug 2022 &nbsp;·&nbsp; InaTEWS network</span>
+                    </div>
+
+                    <div class="highlight-card">
+                        <span class="hc-label">Key Project</span>
+                        <span class="hc-value">Oil &amp; Gas Portfolio Alpha</span>
+                        <span class="hc-sub">10% alpha over sector benchmark via K-Means Clustering</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ── WHAT I DO ── -->
+            <div class="about-section">
+                <h3>What I Do</h3>
+                <p style="font-size:0.92em; line-height:1.85; color:#333333; max-width:680px;">
+                    I help organisations make sense of their data. That means digging into complex
+                    datasets, identifying the patterns that truly matter, and translating them into
+                    insights that are clear enough to act on. My day-to-day work spans Python and SQL
+                    for analysis, Power BI and Tableau for visual storytelling, and a consistent focus
+                    on understanding the business problem before reaching for any tool.
+                </p>
+                <p style="font-size:0.92em; line-height:1.85; color:#333333; max-width:680px;">
+                    My background in geophysical engineering gave me a strong foundation in working
+                    with complex, high-stakes data. Processing seismic datasets where precision was
+                    critical shaped how I approach every analytics challenge today: methodically,
+                    rigorously, and always with outcomes in mind rather than outputs alone.
+                </p>
+            </div>
+
+            <!-- ── INTERESTS ── -->
+            <div class="about-section">
+                <h3>Interests &amp; Personal</h3>
+                <!-- ✏️  EDIT this list — add or remove interests as you like -->
+                <ul class="interests-list">
+                    <li>Data &amp; Analytics</li>
+                    <li>Geoscience</li>
+                    <li>Financial Markets</li>
+                    <li>Problem Solving</li>
+                    <li>Continuous Learning</li>
+                    <!-- Add more: <li>Photography</li> <li>Football</li> etc. -->
+                </ul>
+            </div>
+
+            <!-- ── GET IN TOUCH ── -->
+            <div class="about-section">
+                <h3>Get In Touch</h3>
+                <p style="font-size:0.92em; color:#333333; margin-bottom:1.2em;">
+                    I'm currently open to full-time data analyst roles, freelance projects, and
+                    interesting collaborations. Feel free to reach out through any of the channels below.
+                </p>
+                <div class="about-cta">
+                    <a href="mailto:juanmichaelp21@gmail.com" class="button">Send Email</a>
+                    <a href="https://wa.me/628124747024" target="_blank" class="button alt">WhatsApp</a>
+                    <a href="https://www.linkedin.com/in/juan-michael-376244231" target="_blank" class="button alt">LinkedIn</a>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <section>
+            <form method="post" action="#">
+                <div class="fields">
+                    <div class="field"><label for="name">Name</label><input type="text" name="name" id="name" /></div>
+                    <div class="field"><label for="email">Email</label><input type="text" name="email" id="email" /></div>
+                    <div class="field"><label for="message">Message</label><textarea name="message" id="message" rows="3"></textarea></div>
+                </div>
+                <ul class="actions"><li><input type="submit" value="Send Message" /></li></ul>
+            </form>
+        </section>
+        <section class="split contact">
+            <section class="alt"><h3>Location</h3><p>Ambon, Maluku, Indonesia</p></section>
+            <section><h3>Phone / WhatsApp</h3><p><a href="https://wa.me/628124747024">0812 4747 024</a></p></section>
+            <section><h3>Email</h3><p><a href="mailto:juanmichaelp21@gmail.com">juanmichaelp21@gmail.com</a></p></section>
+            <section>
+                <h3>Social</h3>
+                <ul class="icons alt">
+                    <li><a href="http://www.linkedin.com/in/juan-michael-376244231" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="https://github.com/JuanMichael-ind" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+                    <li><a href="https://wa.me/628124747024" class="icon brands alt fa-whatsapp"><span class="label">WhatsApp</span></a></li>
+                    <li><a href="mailto:juanmichaelp21@gmail.com" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+                </ul>
+            </section>
+        </section>
+    </footer>
+
+    <div id="copyright">
+        <ul><li>&copy; Juan Michael Paais</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+    </div>
+
+</div>
